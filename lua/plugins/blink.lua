@@ -4,11 +4,11 @@ return {
         dependencies = 'rafamadriz/friendly-snippets',
         version = '*',
         opts = {
-            snippets = {
-                expand = function(snippet, _)
-                    return LazyVim.cmp.expand(snippet)
-                end,
-            },
+            -- snippets = {
+            --     expand = function(snippet, _)
+            --         return LazyVim.cmp.expand(snippet)
+            --     end,
+            -- },
             appearance = {
                 use_nvim_cmp_as_default = false,
                 nerd_font_variant = "mono",
@@ -41,12 +41,15 @@ return {
             },
 
             cmdline = {
-                enabled = false,
+                enabled = true,
             },
 
             keymap = {
                 preset = "enter",
-                ["<C-y>"] = { "select_and_accept" },
+                ['<C-space>'] = { 'show' },
+                ['<C-y>'] = { "select_and_accept" },
+                ['<C-k>'] = { 'select_prev', 'fallback' },
+                ['<C-j>'] = { 'select_next', 'fallback' },
             },
         },
         opts_extend = { "sources.default" }
