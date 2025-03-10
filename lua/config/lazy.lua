@@ -53,8 +53,6 @@ if vim.g.neovide then
 
 end
 
-vim.cmd('colorscheme tokyonight-night')
-
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
