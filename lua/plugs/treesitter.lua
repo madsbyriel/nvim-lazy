@@ -1,6 +1,4 @@
 require'nvim-treesitter.configs'.setup {
-    -- ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
-
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
 
@@ -10,10 +8,8 @@ require'nvim-treesitter.configs'.setup {
 
     ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
     -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
-
     highlight = {
         enable = true,
-
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
