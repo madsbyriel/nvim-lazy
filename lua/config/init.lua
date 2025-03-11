@@ -27,3 +27,6 @@ vim.api.nvim_set_keymap('n', '<leader>cc', '<cmd>lua require("telescope.builtin"
 
 -- Create a new tab from current buffer (think buffer copy)
 vim.api.nvim_set_keymap('n', '<leader>bc', '<cmd>tabnew %<CR>', { noremap = true, silent = true })
+
+-- Create a new tab (think buffer new)
+vim.api.nvim_set_keymap('n', '<leader>bn', '<cmd>tabnew<CR>', { noremap = true, silent = true })
