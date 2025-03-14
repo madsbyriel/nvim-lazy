@@ -7,6 +7,7 @@ require("plugs.noice")
 require("plugs.neo-tree")
 require("plugs.mason")
 require("plugs.treesitter")
+require("plugs.harpoon")
 
 vim.cmd('colorscheme tokyonight-night')
 
