@@ -15,6 +15,7 @@ vim.api.nvim_set_keymap("n", "<leader>lk", '<cmd>lua require("telescope.builtin"
 vim.api.nvim_set_keymap('n', '<leader>le', '<cmd>lua require("telescope.builtin").diagnostics()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ls', '<cmd>lua require("telescope.builtin").git_status()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>li', '<cmd>lua require("telescope.builtin").lsp_implementations()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gb', '<cmd>lua require("telescope.builtin").git_branches()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ld', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
