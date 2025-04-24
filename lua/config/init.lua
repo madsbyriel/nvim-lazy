@@ -8,7 +8,7 @@ require("plugs.mason")
 require("plugs.treesitter")
 require("plugs.harpoon")
 
-vim.cmd('colorscheme gruvbox')
+require("config.gruvbox")
 
 -- Set some lsp functionality. Telescope is goated
 vim.api.nvim_set_keymap("n", "<leader>lk", '<cmd>lua require("telescope.builtin").lsp_references()<CR>', {noremap = true, silent = true})
