@@ -1,6 +1,7 @@
 require("config.lazy")
 
 -- plugins
+require("plugs.seblyng-roslyn")
 require("plugs.telescope")
 require("plugs.lualine")
 require("plugs.neo-tree")

@@ -50,8 +50,10 @@ vim.opt.signcolumn = 'yes'
 if vim.g.neovide then
     vim.g.neovide_fullscreen = true
     vim.o.guifont = "0xProto Nerd Font Mono:h14"
-
 end
+
+-- Now doesn't add a newline when opening buffers
+vim.opt.fixeol = false
 
 -- Setup lazy.nvim
 require("lazy").setup({
