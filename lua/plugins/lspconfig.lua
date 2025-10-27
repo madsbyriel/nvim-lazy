@@ -10,7 +10,7 @@ return {
             require('mason-lspconfig').setup_handlers({
                 -- Default handler for installed servers
                 function (server_name)
-                    lspconfig[server_name].setup({
+                    vim.lsp.config(server_name, {
                         capabilities = capabilities,
                     })
                 end,
