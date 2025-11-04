@@ -12,7 +12,8 @@ return {
                 function (server_name)
                     vim.lsp.config(server_name, {
                         capabilities = capabilities,
-                    })
+                    });
+                    vim.lsp.enable(server_name);
                 end,
             })
         end
