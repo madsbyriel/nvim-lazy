@@ -37,7 +37,12 @@ vim.api.nvim_set_keymap('n', '<leader>B', '<cmd>DapToggleBreakpoint<CR>', { nore
 vim.api.nvim_set_keymap('n', '<leader>BC', '<cmd>DapClearBreakpoints<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>C', '<cmd>DapContinue<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>O', '<cmd>lua require"dap".repl.open()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>O', '<cmd>lua require"dap".repl.open()<CR>', { noremap = true, silent = true })
 
+-- Quick fix list
+vim.api.nvim_set_keymap('n', '<leader>qj', '<cmd>cnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>qk', '<cmd>cprevious<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>qo', '<cmd>Telescope quickfix<CR>', { noremap = true, silent = true })
 
 
 -- For fun, see all colorschemes
