@@ -1,5 +1,6 @@
 require("config.lazy")
 
+
 -- plugins
 require("plugs.seblyng-roslyn")
 require("plugs.telescope")
@@ -10,8 +11,10 @@ require("plugs.treesitter")
 require("plugs.harpoon")
 require("plugs.nvim-dap")
 
+
 -- require("config.gruvbox")
 require("config.catppuccin")
+
 
 -- Set some lsp functionality. Telescope is goated
 vim.api.nvim_set_keymap('n', '<leader>gb', '<cmd>lua require("telescope.builtin").git_branches()<CR>', { noremap = true, silent = true })
@@ -27,22 +30,26 @@ vim.api.nvim_set_keymap('n', '<leader>es', '<cmd>lua vim.diagnostic.open_float()
 vim.api.nvim_set_keymap('n', '<leader>ek', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ej', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 
--- Debugging stuff
-vim.api.nvim_set_keymap('n', '<leader>J', '<cmd>DapStepOver<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>H', '<cmd>DapStepOut<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>L', '<cmd>DapStepInto<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>D', '<cmd>DapNew<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>S', '<cmd>DapDisconnect<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>B', '<cmd>DapToggleBreakpoint<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>BC', '<cmd>DapClearBreakpoints<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>C', '<cmd>DapContinue<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>O', '<cmd>lua require"dap".repl.open()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>O', '<cmd>lua require"dap".repl.open()<CR>', { noremap = true, silent = true })
 
 -- Quick fix list
 vim.api.nvim_set_keymap('n', '<leader>qj', '<cmd>cnext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>qk', '<cmd>cprevious<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>qo', '<cmd>Telescope quickfix<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>qi", function()
+  local pos = vim.api.nvim_win_get_cursor(0)
+  local entry = {
+    filename = vim.api.nvim_buf_get_name(0),
+    lnum = pos[1],
+    col = pos[2] + 1, -- Vim columns are 1-based
+    text = "Manual mark"
+  }
+  vim.fn.setqflist({ entry }, 'a')  -- 'a' = append
+  print("Added to quickfix list")
+end)
+
+vim.keymap.set("n", "<leader>qc", function()
+    vim.fn.setqflist({}, 'r')
+end)
 
 
 -- For fun, see all colorschemes
